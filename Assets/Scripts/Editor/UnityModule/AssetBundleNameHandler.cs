@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Text.RegularExpressions;
 using UnityEditor;
 using UnityEngine;
+using UnityModule.Settings;
 using Object = UnityEngine.Object;
 
 namespace UnityModule {
@@ -11,23 +12,40 @@ namespace UnityModule {
     /// AssetBundleName を操作します
     /// </summary>
     /// <remarks>Variant は非対応です。</remarks>
-    public class AssetBundleNameHandler {
+    public static class AssetBundleNameHandler {
 
         /// <summary>
         /// AssetBundle 名のフォーマット
         /// </summary>
-        private const string ASSET_BUNDLE_NAME_FORMAT = "{0}.unity3d";
+        private const string ASSET_BUNDLE_NAME_FORMAT = "{0}{1}.unity3d";
+
+        /// <summary>
+        /// プロジェクトコードプレフィックスのフォーマット
+        /// </summary>
+        private const string PROJECT_CODE_PREFIX_FORMAT = "projects/{0}/";
 
         /// <summary>
         /// AssetBundleName を設定する
         /// </summary>
-        /// <remarks>アセットのパスをそのまま AssetBundleName に設定します。</remarks>
+        /// <remarks>アセットのパスをほぼそのまま AssetBundleName に設定します。</remarks>
         /// <remarks>ディレクトリには設定せず、配下のアセットに対して個別に設定します。</remarks>
+        /// <remarks>サブプロジェクトの場合はプロジェクトコードをプレフィックスとして付加します。</remarks>
         [MenuItem("Project/AssetBundle/Apply AssetBundleName")]
         public static void ApplyAssetBundleNameToSelection() {
+            // プロジェクトコードサフィックスを決定する
+            string projectCodePrefix = ProjectSetting.Instance.IsMain
+                ? string.Empty
+                : string.Format(PROJECT_CODE_PREFIX_FORMAT, ProjectSetting.Instance.ProjectCode.ToLower());
             HandleAssetBundleNameToSelection(
                 (assetImporter, assetPath) => {
-                    assetImporter.SetAssetBundleNameAndVariant(string.Format(ASSET_BUNDLE_NAME_FORMAT, Regex.Replace(assetPath.ToLower(), "^assets/", string.Empty)), string.Empty);
+                    assetImporter.SetAssetBundleNameAndVariant(
+                        string.Format(
+                            ASSET_BUNDLE_NAME_FORMAT,
+                            projectCodePrefix,
+                            Regex.Replace(assetPath.ToLower(), "^assets/", string.Empty)
+                        ),
+                        string.Empty
+                    );
                 }
             );
         }
