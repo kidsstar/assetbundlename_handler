@@ -1,0 +1,35 @@
+{
+  "name": "@kidsstar/assetbundlename_handler",
+  "version": "1.0.0",
+  "description": "Provide Apply/Clear AssetBundleName menu",
+  "homepage": "https://github.com/kidsstar/assetbundlename_handler",
+  "bugs": {
+    "url": "https://github.com/kidsstar/assetbundlename_handler/issues"
+  },
+  "scripts": {
+    "postinstall": "node scripts/postinstall.js",
+    "postuninstall": "node scripts/postuninstall.js",
+    "build:test": "tar -tf $(npm pack -s) && $(npm bin)/rimraf $_"
+  },
+  "author": {
+    "name": "Tetsuya Mori",
+    "email": "tetsuya.mori@kidsstar.co.jp",
+    "url": "https://www.kidsstar.co.jp/"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:kidsstar/assetbundlename_handler"
+  },
+  "files": [
+    "Assets",
+    "scripts"
+  ],
+  "dependencies": {
+    "glob": "^7.1.2",
+    "mkdirp": "^0.5.1",
+    "ncp": "^2.0.0",
+    "rimraf": "^2.6.1"
+  },
+  "devDependencies": {}
+}
