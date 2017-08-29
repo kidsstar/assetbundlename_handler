@@ -26,7 +26,7 @@
     "scripts"
   ],
   "dependencies": {
-    "@kidsstar/project_setting": "^1.1.0",
+    "@kidsstar/project_setting": "~1",
     "glob": "^7.1.2",
     "mkdirp": "^0.5.1",
     "ncp": "^2.0.0",
