@@ -10,7 +10,7 @@
 # Install
 
 ```shell
-$ npm install -D @kidsstar/assetbundlename_handler
+$ npm install -D github:kidsstar/assetbundlename_handler.git
 ```
 
 # Usage
