@@ -10,7 +10,7 @@
 # Install
 
 ```shell
-$ npm install -D github:kidsstar/assetbundlename_handler.git
+yarn add "kidsstar/assetbundlename_handler#^1.0.0"
 ```
 
 # Usage
