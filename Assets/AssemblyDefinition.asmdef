@@ -1,6 +1,8 @@
 {
     "name": "umm@assetbundlename_handler",
-    "references": [],
+    "references": [
+        "umm@project_setting"
+    ],
     "optionalUnityReferences": [],
     "includePlatforms": [],
     "excludePlatforms": [],
