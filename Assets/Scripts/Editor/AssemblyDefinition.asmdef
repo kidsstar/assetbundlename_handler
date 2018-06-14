@@ -1,7 +1,9 @@
 {
     "name": "umm@assetbundlename_handler-Editor",
     "references": [
-        "umm@assetbundlename_handler"
+        "umm@assetbundlename_handler",
+        "umm@setting_core",
+        "umm@project_setting"
     ],
     "optionalUnityReferences": [],
     "includePlatforms": [
