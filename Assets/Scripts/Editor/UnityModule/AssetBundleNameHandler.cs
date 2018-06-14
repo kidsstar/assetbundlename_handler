@@ -33,9 +33,9 @@ namespace UnityModule {
         [MenuItem("Project/AssetBundle/Apply AssetBundleName")]
         public static void ApplyAssetBundleNameToSelection() {
             // プロジェクトコードサフィックスを決定する
-            string projectCodePrefix = ProjectSetting.Instance.IsMain
+            string projectCodePrefix = ProjectSetting.GetOrDefault().IsMain
                 ? string.Empty
-                : string.Format(PROJECT_CODE_PREFIX_FORMAT, ProjectSetting.Instance.ProjectCode.ToLower());
+                : string.Format(PROJECT_CODE_PREFIX_FORMAT, ProjectSetting.GetOrDefault().ProjectCode.ToLower());
             HandleAssetBundleNameToSelection(
                 (assetImporter, assetPath) => {
                     assetImporter.SetAssetBundleNameAndVariant(
