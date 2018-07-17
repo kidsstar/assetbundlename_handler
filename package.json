@@ -1,6 +1,6 @@
 {
   "name": "@umm/assetbundlename_handler",
-  "version": "1.3.3",
+  "version": "1.3.4",
   "description": "Provide Apply/Clear AssetBundleName menu",
   "homepage": "https://github.com/umm/assetbundlename_handler",
   "bugs": {
