@@ -1,7 +1,6 @@
 {
     "name": "umm@assetbundlename_handler-Editor",
     "references": [
-        "umm@assetbundlename_handler",
         "umm@setting_core",
         "umm@project_setting"
     ],
@@ -10,5 +9,10 @@
         "Editor"
     ],
     "excludePlatforms": [],
-    "allowUnsafeCode": false
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": []
 }
