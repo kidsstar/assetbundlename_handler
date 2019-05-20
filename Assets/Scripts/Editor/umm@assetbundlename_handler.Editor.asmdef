@@ -1,0 +1,18 @@
+{
+    "name": "umm@assetbundlename_handler-Editor",
+    "references": [
+        "umm@setting_core",
+        "umm@project_setting"
+    ],
+    "optionalUnityReferences": [],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": []
+}
